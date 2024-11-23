@@ -1,0 +1,6 @@
+{
+  "code": "500",
+  "message": "I/O error on GET request for \"http://nacos-payment-provider/pay/nacos/1\": nacos-payment-provider",
+  "data": null,
+  "timestamp": 1732116816618
+}

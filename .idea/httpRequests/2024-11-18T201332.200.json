@@ -1,0 +1,15 @@
+{
+  "code": "200",
+  "message": "success",
+  "data": {
+    "id": 1,
+    "payNo": "paystring3666",
+    "orderNo": "abcasdf222",
+    "userId": 1,
+    "amount": 9.99,
+    "deleted": 0,
+    "createTime": "2024-11-18 15:10:57",
+    "updateTime": "2024-11-18 20:11:55"
+  },
+  "timestamp": 1731932012259
+}

@@ -1,0 +1,94 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway #以微服务注册进consul或nacos服务列表内
+  cloud:
+    consul: #配置consul地址
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true #使用IP地址注册到consul
+        service-name: ${spring.application.name} #微服务名称
+    gateway:
+      routes:
+        - id: pay_routh1 #pay_routh1                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001                #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service          #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/get/**              # 断言，路径相匹配的进行路由
+            - After=2024-11-20T10:07:12.786086900+08:00[Asia/Hong_Kong]
+#            - Before=2024-11-20T10:09:12.786086900+08:00[Asia/Hong_Kong]
+#            - Between=2024-11-20T10:08:12.786086900+08:00[Asia/Hong_Kong],2024-11-20T10:09:12.786086900+08:00[Asia/Hong_Kong]
+#            - Cookie=username,zzyy
+#            - Header=X-Request-Id, \d+               #请求头中要有X-Request-Id，且值必须是整数的正则表达式
+#            - Host=**.atguigu.com                    #请求域名包含atguigu.com的进行路由
+#            - Query=username, \d+                    #请求参数中要有username，且值必须是整数的正则表达式
+#            - RemoteAddr=192.168.31.220/24 # 外部访问我的IP限制，最大跨度不超过32，目前是1~24它们是 CIDR 表示法。
+#            - Method=GET,POST                       #请求方法为GET或POST的进行路由
+#            - My=glod                               #自定义的断言，My=glod，自定义的断言需要在GatewayFilterFactory中注册
+#            - name: My
+#              args:
+#                userType: diamond
+
+        - id: pay_routh2 #pay_routh2                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001                #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/info/**              # 断言，路径相匹配的进行路由
+
+
+        - id: pay_routh3 #pay_routh3
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/filter/**              # 断言，路径相匹配的进行路由
+#            - Path=/gateway/filter/**              # 断言，为配合PrefixPath测试过滤，暂时注释掉/pay
+#            - Path=/XYZ/abc/{segment}           # 断言，为配合SetPath测试，{segment}的内容最后被SetPath取代 浏览器访问 http://localhost:9527/XYZ/abc/filter
+          filters:
+#            - My=atguigu
+#            - PrefixPath=/pay     # http://localhost:9527/pay/gateway/filter  被拆分为:PrefixPath + Path 实际的调用地址为: http://localhost:9527/gateway/filter
+#            - SetPath=/pay/gateway/{segment}  # {segment}表示占位符，你写abc也行但要上下一致 实际的调用地址为: http://localhost:9527/pay/gateway/filter
+#            - RedirectTo=302, http://www.atguigu.com/ #302表示临时重定向的HTTP状态码 访问http://localhost:9527/pay/gateway/filter跳转到http://www.atguigu.com/
+
+#            - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头kv，若一头含有多参则重写一行设置
+#            - AddRequestHeader=X-Request-atguigu2,atguiguValue2
+#            - RemoveRequestHeader=sec-fetch-site      # 删除请求头sec-fetch-site
+#            - SetRequestHeader=sec-fetch-mode, Blue-updatebyzzyy # 将请求头sec-fetch-mode对应的值修改为Blue-updatebyzzyy
+#            - AddRequestParameter=customerId,9527001 # 新增请求参数Parameter：k ，v
+#            - RemoveRequestParameter=customerName   # 删除url请求参数customerName，你传递过来也是null
+#            - AddResponseHeader=X-Response-atguigu, BlueResponse # 新增请求参数X-Response-atguigu并设值为BlueResponse
+#            - SetResponseHeader=Date,2099-11-11 # 设置回应头Date值为2099-11-11
+#            - RemoveResponseHeader=Content-Type # 将默认自带Content-Type回应属性删除
+
+            #301: 永久重定向，客户端应使用新的URL。
+            #302状态码表示请求的资源被临时移动到另一网址，客户端在未来的请求中仍然应使用原始的URL，但建议访问新的URL。
+            #303: 用于POST请求之后的重定向，建议客户端使用GET请求访问新的URL。
+            #307: 临时重定向，但请求方法不应改变，保持原请求方法。
+            #308: 永久重定向，与307类似，保持请求方法不变。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

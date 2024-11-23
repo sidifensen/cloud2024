@@ -1,0 +1,120 @@
+GET http://localhost:83/consumer/pay/nacos/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-20T233336.500.json
+
+###
+
+GET http://localhost:8002/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-19T002546.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-19T002542.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234529.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234519.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234459.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234356.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234331.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/info
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T234244.200.txt
+
+###
+
+GET http://localhost:8001/pay/get/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T201332.200.json
+
+###
+
+GET http://localhost:80/consumer/pay/del/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T201325.500.json
+
+###
+
+GET http://localhost:8001/pay/get/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.6
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-18T160759.200.json
+
+###
+
